@@ -1,0 +1,25 @@
+{
+  "name": "nerms",
+  "version": "1.0.0",
+  "description": "NodeJS Entity Relationship Models",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KrisKuiper/Nerms.git"
+  },
+  "keywords": [
+    "Entity",
+    "Entities",
+    "Model",
+    "Models",
+    "Relationship",
+    "Objects",
+    "Store"
+  ],
+  "author": "Kris Kuiper <npmjs.com@sfire.nl> (https://kriskuiper.nl)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KrisKuiper/Nerms/issues"
+  },
+  "homepage": "https://github.com/KrisKuiper/Nerms#readme"
+}
