@@ -1,6 +1,6 @@
 {
   "name": "nerms",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "NodeJS Entity Relationship Models",
   "main": "index.js",
   "repository": {
