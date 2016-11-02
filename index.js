@@ -1,6 +1,6 @@
 'use strict';
 
-var Nerms = new function() {
+module.exports = new function() {
 
 	var _data = {
 
@@ -463,22 +463,3 @@ var Nerms = new function() {
 		return dump;
 	}
 };
-
-
-
-var userModel  		 = Nerms.type.add({name : 'User', properties : {id : null, firstname : null, lastname : null, phonenumbers : []}});
-var phonenumberModel = Nerms.type.add({name : 'Phonenumber', properties : {id : null, number : null, users : [] }});
-
-userModel.link({model : 'Phonenumber', on : ['user_id', 'id'], property : ['phonenumbers', 'users']});
-phonenumberModel.link({model : 'User', on : ['phonenumber_id', 'id'], property : ['users', 'phonenumbers']});
-
-
-//Creating new User entity and adding it automatic to the User model
-Nerms.map({id : 1, firstname : 'Kris', lastname : 'Kuiper', 'phonenumber_id' : 1}, 'User');
-
-//Creating new Phonenumber entity and adding it automatic to the Phonenumber model
-Nerms.map({id : 1, number : '0123456789', user_id : 1}, 'Phonenumber');
-
-
-var entity = Nerms.models.User.find.firstname('Kris');
-console.log(entity);
