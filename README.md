@@ -236,18 +236,24 @@ Output:
 ```
 
 #### Manual relationships
-You may create your own custom relationships by adding entities to other entities. 
+You can manually push an entity in an existing entity. In this example we will create a User entity and push a Phonenumber entity into the User entity. Be aware that the "phonenumber" property must be an Array to push entities into it.
 ```javascript
-var user = {}
-var user =  Nerms.models.User.find.id(1);
+//Define user
+var properties = {id : 1, firstname : 'Kris', lastname : 'Kuiper', phonenumber : []};
 
-//User properties
-{id : 1, firstname : 'Kris', lastname : 'Kuiper', 'phone_id' : 1}
+//Create User entity
+var user = new Nerms.entities.User(properties);
 
-//Phonenumber properties
-{id : 1, number : '0123456789', user_id : 1}
+//Define phone number
+var properties = {id : 1, number : '0123456789'};
+
+//Create Phonenumber entity
+var phonenumber = new Nerms.entities.Phonenumber(properties);
+
+//Add Phonenumber entity to phonenumber property of User entity
+user.phonenumber.push(phonenumber)
+
 ```
-
 
 ## Events
 ##### On event

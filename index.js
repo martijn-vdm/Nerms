@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = new function() {
+var Nerms = new function() {
 
 	var _data = {
 
@@ -463,3 +463,29 @@ module.exports = new function() {
 		return dump;
 	}
 };
+
+
+
+
+//Add the model to Nerms
+Nerms.type.add({name : 'Phonenumber', properties : {id : null, number : null}});
+Nerms.type.add({name : 'User', properties : {id : null, firstname : null, lastname : null, phonenumber : []}});
+
+
+//Define user
+var properties = {id : 1, firstname : 'Kris', lastname : 'Kuiper', phonenumber : []};
+
+//Create entity
+var user = new Nerms.entities.User(properties);
+
+
+//Define phonenumber
+var properties = {id : 1, number : '0123456789'};
+
+//Create entity
+var phonenumber = new Nerms.entities.Phonenumber(properties);
+
+
+user.phonenumber.push(phonenumber);
+
+console.log(Nerms.models.User.find.id(1).phonenumber.list()[0].number.get());
