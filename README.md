@@ -96,7 +96,7 @@ var entity = new Nerms.entities.User({id : 1, firstname : 'Kris', lastname : 'Ku
 Nerms.models.User.push(entity)
 ```
 ###### \**Important note*\*
-If you create an entity it will automaticly be pushed to the model. So if you use the above code, you will have two equal User entities.
+If you create an entity it will automatically be pushed to the model. So if you use the above code, you will have two equal User entities.
 
 ##### Model destroy function
 If you want to delete a Model with all its Entities, you may use the "destroy" function for Models. Here, too, applies that all Entities are destroyed within the Model you want to destroy. 
